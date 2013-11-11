@@ -28,7 +28,7 @@ node['user']['user_array_node_attr'].split("/").each do |hash_key|
   user_array = user_array.send(:[], hash_key)
 end
 
-user_array = data_bag(bag) if user_array.nil?
+user_array = data_bag(bag) if user_array.nil? || user_array.empty?
 
 # only manage the subset of users defined
 Array(user_array).each do |i|
